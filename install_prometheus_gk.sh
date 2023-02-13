@@ -77,7 +77,8 @@ sudo vi /etc/nginx/sites-enabled/prometheus
 #--
 server {
 	listen 80;
-	server_name prometheus prometheus.gk.local
+	listen [::]:80;
+	server_name prometheus prometheus.gk.local 192.168.60.10;
 
 	location / {
 		auth_basic "Prometheus server authentication";
